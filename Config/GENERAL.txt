@@ -1,5 +1,5 @@
 #科学插件调整
-CONFIG_PACKAGE_luci-app-homeproxy=Y
+#CONFIG_PACKAGE_luci-app-homeproxy=Y
 
 #增加插件
 CONFIG_PACKAGE_luci-app-upnp=y
@@ -16,6 +16,7 @@ CONFIG_PACKAGE_luci-app-ddns=y
 CONFIG_PACKAGE_luci-app-passwall=y
 CONFIG_PACKAGE_luci-app-ttyd=y
 CONFIG_PACKAGE_luci-app-filemanager=y
+CONFIG_PACKAGE_luci-app-mosdns=y
 
 #删除插件
 CONFIG_PACKAGE_luci-app-wol=n
