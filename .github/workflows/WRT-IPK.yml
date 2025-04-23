@@ -178,8 +178,10 @@ jobs:
         if: env.WRT_TEST != 'true'
         run: |
           cd ./wrt/
-
-          make -j$(nproc) || make -j$(nproc) V=s
+          make package/minieap/compile V=s -j$(nproc)
+# 编译完成后，.ipk 文件会生成在 ./bin/packages/<YourArchitecture>/base 目录下。将其拷贝到路由器上即可通过 opkg 进行安装
+          #make -j$(nproc) || make -j$(nproc) V=s
+          
 
       - name: Machine Information
         run: |
