@@ -1,5 +1,5 @@
 #CI项目
-name: WRT-TEST
+name: WRT-IPK
 
 #CI计划
 on:
@@ -50,8 +50,8 @@ permissions: write-all
 jobs:
   config:
     name: ${{inputs.CONFIG}}
-    #调用公用编译核心WRT-CORE.yml
-    uses: ./.github/workflows/WRT-CORE.yml
+    #调用公用编译核心WRT-IPK.yml
+    uses: ./.github/workflows/WRT-IPK.yml
     with:
       #编译配置
       WRT_CONFIG: ${{inputs.CONFIG}}
