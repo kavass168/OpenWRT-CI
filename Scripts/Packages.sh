@@ -57,6 +57,10 @@ UPDATE_PACKAGE "passwall2" "xiaorouji/openwrt-passwall2" "main" "pkg"
 # 定制编译luci-app-adguardhome
 UPDATE_PACKAGE "luci-app-adguardhome" "rufengsuixing/luci-app-adguardhome" "master"
 
+#https://github.com/berlin-open-wireless-lab/DAWN
+#https://github.com/openwrt/luci/tree/master/applications/luci-app-dawn
+UPDATE_PACKAGE "luci-app-dawn" "openwrt/luci/tree/master/applications/luci-app-dawn" "master"
+
 UPDATE_PACKAGE "luci-app-tailscale" "asvow/luci-app-tailscale" "main"
 
 UPDATE_PACKAGE "alist" "sbwml/luci-app-alist" "main"
