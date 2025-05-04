@@ -59,7 +59,7 @@ UPDATE_PACKAGE "luci-app-adguardhome" "rufengsuixing/luci-app-adguardhome" "mast
 
 #https://github.com/berlin-open-wireless-lab/DAWN
 #https://github.com/openwrt/luci/tree/master/applications/luci-app-dawn
-UPDATE_PACKAGE "luci-app-dawn" "openwrt/luci/tree/master/applications/luci-app-dawn" "master"
+UPDATE_PACKAGE "dawn" "berlin-open-wireless-lab/DAWN" "master"
 
 UPDATE_PACKAGE "luci-app-tailscale" "asvow/luci-app-tailscale" "main"
 
