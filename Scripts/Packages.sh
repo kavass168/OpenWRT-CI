@@ -62,8 +62,8 @@ UPDATE_PACKAGE "luci-app-adguardhome" "rufengsuixing/luci-app-adguardhome" "mast
 #https://github.com/openwrt/packages
 #https://github.com/openwrt/luci
 
-UPDATE_PACKAGE "dawn" "openwrt/packages" "master" "pkg"
-UPDATE_PACKAGE "luci-app-dawn" "openwrt/luci" "master" "pkg"
+#UPDATE_PACKAGE "dawn" "openwrt/packages" "master" "pkg"
+#UPDATE_PACKAGE "luci-app-dawn" "openwrt/luci" "master" "pkg"
 
 UPDATE_PACKAGE "luci-app-tailscale" "asvow/luci-app-tailscale" "main"
 
