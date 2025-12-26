@@ -161,7 +161,7 @@ jobs:
       # . 运行新版检测脚本（检查 openwrt/ 目录）
       - name: Run hy3000 environment check
         run: |
-          cd ./openwrt/
+          cd ./wrt/
           chmod +x $GITHUB_WORKSPACE/Scripts/check-hy3000-env.sh
           $GITHUB_WORKSPACE/Scripts/check-hy3000-env.sh
           df -h
