@@ -213,6 +213,9 @@ jobs:
           du -h --max-depth=1
           echo "======================="
 
+          find ./build_dir/ -type f -iname "mt7981_philips_hy3000_defconfig"     
+          find ./build_dir/ -type d -name "philips_hy3000"
+
       - name: Package Firmware
         run: |
           cd ./wrt/ && mkdir ./upload/
@@ -230,12 +233,10 @@ jobs:
               NAME=$(basename $FILE | cut -d '.' -f 1 | grep -io "\($WRT_TARGET\).*")
               NEW_FILE="$WRT_INFO"-"$WRT_BRANCH"-"$NAME"-"$WRT_DATE"."$EXT"
               mv -f $FILE ./upload/$NEW_FILE
-            done
-
-            find ./bin/targets/ -type f -exec mv -f {} ./upload/ \;
-
-           # make clean -j$(nproc)
-          fi
+              done
+              find ./bin/targets/ -type f -exec mv -f {} ./upload/ \;
+              make clean -j$(nproc)
+            fi
 
       - name: Release Firmware
         uses: softprops/action-gh-release@master
