@@ -48,8 +48,8 @@ CONFIG_PACKAGE_kmod-mt7915e=y
 CONFIG_PACKAGE_kmod-mt7981-firmware=y
 CONFIG_PACKAGE_mt7981-wo-firmware=y
 
-CONFIG_PACKAGE_luci-theme-argon=y
-CONFIG_PACKAGE_luci-app-argon-config=y
+CONFIG_PACKAGE_luci-theme-aurora=y
+CONFIG_PACKAGE_luci-theme-aurora-config=y
 CONFIG_PACKAGE_luci-app-dawn=y
 CONFIG_PACKAGE_dawn=y
 CONFIG_PACKAGE_ubus=y
