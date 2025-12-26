@@ -234,7 +234,7 @@ jobs:
 
             find ./bin/targets/ -type f -exec mv -f {} ./upload/ \;
 
-            make clean -j$(nproc)
+           # make clean -j$(nproc)
           fi
 
       - name: Release Firmware
