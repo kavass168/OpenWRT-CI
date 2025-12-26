@@ -60,6 +60,7 @@ acer,predator-w6|\
 acer,predator-w6d|\
 acer,vero-w6m|\
 glinet,gl-mt2500|\
+philips,hy3000|\
 glinet,gl-mt6000|\
 glinet,gl-x3000|\
 glinet,gl-xe3000|\
@@ -86,7 +87,6 @@ bananapi,bpi-r4|\
 bananapi,bpi-r4-lite|\
 bananapi,bpi-r4-poe|\
 cmcc,rax3000m|\
-philips,hy3000|\
 cmcc,rax3000me|\
 jdcloud,re-cp-03|\
 konka,komi-a31)
