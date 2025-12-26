@@ -2,7 +2,7 @@
 
 echo "=== hy3000 构建环境自检（openwrt/）开始 ==="
 
-ROOT="$GITHUB_WORKSPACE/openwrt"
+ROOT="$GITHUB_WORKSPACE/wrt"
 
 # 1. 检查 filogic.mk
 if [ ! -f "$ROOT/target/linux/mediatek/image/filogic.mk" ]; then
