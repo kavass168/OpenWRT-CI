@@ -215,6 +215,8 @@ jobs:
 
           find ./build_dir/ -type f -iname "mt7981_philips_hy3000_defconfig"     
           find ./build_dir/ -type d -name "philips_hy3000"
+          find ./build_dir/ -type d -name "*bl2*"
+          find ./build_dir/ -type d -name "mt7981-emmc-ddr4"
 
       - name: Package Firmware
         run: |
