@@ -278,5 +278,5 @@ jobs:
           
       - name: Package Firmware
         run: |
-          make clean -j$(nproc)
+          #make clean -j$(nproc)
 
