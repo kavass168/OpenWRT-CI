@@ -871,7 +871,7 @@ define Device/philips_hy3000
   DEVICE_DTS_LOADADDR := 0x43f00000
   DEVICE_PACKAGES := kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware kmod-usb3 \
 	automount f2fsck mkf2fs
-  SUPPORTED_DEVICES += mediatek,mt7981-philips-hy3000
+  SUPPORTED_DEVICES += philips,hy3000
   KERNEL_LOADADDR := 0x44000000
   KERNEL := kernel-bin | gzip
   KERNEL_INITRAMFS := kernel-bin | lzma | \
@@ -884,6 +884,8 @@ define Device/philips_hy3000
   IMAGE/sysupgrade.itb := append-kernel | \
 	fit gzip $$(KDIR)/image-$$(firstword $$(DEVICE_DTS)).dtb external-static-with-rootfs | \
 	pad-rootfs | append-metadata 
+  IMAGES := hy3000-bl2.bin
+  IMAGE/hy3000-bl2.bin := fip-image
   # ARTIFACTS := gpt.bin preloader.bin bl31-uboot.fip
   # ARTIFACT/gpt.bin := mt798x-gpt emmc
   # ARTIFACT/preloader.bin := mt7981-bl2 emmc-ddr4
