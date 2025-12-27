@@ -237,8 +237,9 @@ jobs:
               mv -f $FILE ./upload/$NEW_FILE
               done
               find ./bin/targets/ -type f -exec mv -f {} ./upload/ \;
+              make clean -j$(nproc) 
           fi
-          make clean -j$(nproc)  
+ 
            
       - name: Release Firmware
         uses: softprops/action-gh-release@master
