@@ -238,7 +238,7 @@ jobs:
               done
               find ./bin/targets/ -type f -exec mv -f {} ./upload/ \;
           fi
-            
+          make clean -j$(nproc)  
            
       - name: Release Firmware
         uses: softprops/action-gh-release@master
