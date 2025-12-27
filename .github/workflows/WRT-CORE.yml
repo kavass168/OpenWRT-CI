@@ -198,8 +198,7 @@ jobs:
         if: env.WRT_TEST != 'true'
         run: |
           cd ./wrt/
-
-          make -j$(nproc) || make -j1 V=s
+          make -j$(nproc) || make -j1 V=s 2>&1 | tee build-full.log
 
       - name: Machine Information
         run: |
@@ -223,6 +222,7 @@ jobs:
           cd ./wrt/ && mkdir ./upload/
           find ./bin/targets/ -type f -iname "*.*"
           cp -f ./.config ./upload/Config-"$WRT_CONFIG"-"$WRT_INFO"-"$WRT_BRANCH"-"$WRT_DATE".txt
+          cp -f ./build-full.log ./upload/
 
           if [[ $WRT_TEST != 'true' ]]; then
             echo "WRT_KVER=$(find ./bin/targets/ -type f -name "*.manifest" -exec grep -oP '^kernel - \K[\d\.]+' {} \;)" >> $GITHUB_ENV
