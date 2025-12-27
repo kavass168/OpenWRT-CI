@@ -884,8 +884,8 @@ define Device/philips_hy3000
   IMAGE/sysupgrade.itb := append-kernel | \
 	fit gzip $$(KDIR)/image-$$(firstword $$(DEVICE_DTS)).dtb external-static-with-rootfs | \
 	pad-rootfs | append-metadata 
-  IMAGES := hy3000-bl2.bin
-  IMAGE/hy3000-bl2.bin := fip-image
+  #IMAGES := hy3000-bl2.bin
+  #IMAGE/hy3000-bl2.bin := fip-image
   # ARTIFACTS := gpt.bin preloader.bin bl31-uboot.fip
   # ARTIFACT/gpt.bin := mt798x-gpt emmc
   # ARTIFACT/preloader.bin := mt7981-bl2 emmc-ddr4
