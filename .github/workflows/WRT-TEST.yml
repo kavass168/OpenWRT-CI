@@ -31,9 +31,16 @@ on:
           - LiBwrt/openwrt-6.x
           - qosmio/openwrt-ipq
       BRANCH:
-        default: 'main'
+        default: 'master'
         required: true
-        type: string
+        type: choice
+        options:      
+          - master
+          - main
+          - owrt
+          - openwrt-25.12
+          - openwrt-24.10
+          - openwrt-23.05
       PACKAGE:
         required: false
         type: string
@@ -42,6 +49,11 @@ on:
         default: 'true'
         required: true
         type: boolean
+        
+      ssh:
+        description: 'SSH connection to Actions'
+        required: false
+        default: 'false' 
 
 #CI权限
 permissions: write-all
