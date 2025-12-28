@@ -151,6 +151,13 @@ jobs:
           ./scripts/feeds update -a
           ./scripts/feeds install -a
 
+      # . 覆盖适配文件到官方源码
+      - name: Apply HY3000 device files
+        run: |
+          cd ./wrt/
+          chmod +x $GITHUB_WORKSPACE/Scripts/copyfile-hy3000.sh
+          $GITHUB_WORKSPACE/Scripts/copyfile-hy3000.sh
+
       - name: Custom Packages
         run: |
           cd ./wrt/package/
@@ -172,6 +179,14 @@ jobs:
 
           make defconfig -j$(nproc) && make clean -j$(nproc)
 
+      # . 运行新版检测脚本（检查 openwrt/ 目录）
+      - name: Run hy3000 environment check
+        run: |
+          cd ./wrt/
+          chmod +x $GITHUB_WORKSPACE/Scripts/check-hy3000-env.sh
+          $GITHUB_WORKSPACE/Scripts/check-hy3000-env.sh
+          df -h
+          
       - name: Download Packages
         if: env.WRT_TEST != 'true'
         run: |
@@ -197,6 +212,10 @@ jobs:
           echo "======================="
           du -h --max-depth=1
           echo "======================="
+          find ./build_dir/ -type f -iname "mt7981_philips_hy3000_defconfig"     
+          find ./build_dir/ -type d -name "philips_hy3000"
+          find ./build_dir/ -type d -name "*bl2*"
+          find ./build_dir/ -type d -name "mt7981-emmc-ddr4"
 
       - name: Package Firmware
         run: |
@@ -249,3 +268,11 @@ jobs:
 
             内核版本：${{env.WRT_KVER}}
             插件列表：${{env.WRT_LIST}}
+
+      - name: SSH connection to Actions
+        uses: P3TERX/ssh2actions@v1.0.0
+        if: (github.event.inputs.ssh == 'true' && github.event.inputs.ssh  != 'false') || contains(github.event.action, 'ssh')
+        env:
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          
