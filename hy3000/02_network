@@ -58,7 +58,7 @@ mediatek_setup_interfaces()
 	livinet,zr-3020|\
 	livinet,zr-3020-ubootmod|\
 	qihoo,360t7|\
-	*philips,hy3000*|\
+	philips,hy3000|\
 	routerich,ax3000|\
 	routerich,ax3000-ubootmod|\
 	tenbay,wr3000k|\
