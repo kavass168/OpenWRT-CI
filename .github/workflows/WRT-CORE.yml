@@ -176,7 +176,9 @@ jobs:
           fi
 
           $GITHUB_WORKSPACE/Scripts/Settings.sh
-
+          # 手动清除dtb文件
+          find ./ -name "*.dtb" -delete
+          
           make defconfig -j$(nproc) && make clean -j$(nproc)
 
       # . 运行新版检测脚本（检查 openwrt/ 目录）
