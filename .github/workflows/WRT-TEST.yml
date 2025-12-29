@@ -41,6 +41,14 @@ on:
           - openwrt-25.12
           - openwrt-24.10
           - openwrt-23.05
+      DTS:
+        default: 'mt7981b-philips-hy3000.dts '
+        required: true
+        type: choice
+        options:      
+          - mt7981b-philips-hy3000.dts 
+          - mt7981b-philips-hy3000-d1.dts 
+          - mt7981b-philips-hy3000-d2.dts      
       PACKAGE:
         required: false
         type: string
@@ -67,6 +75,8 @@ jobs:
     with:
       #编译配置
       WRT_CONFIG: ${{inputs.CONFIG}}
+      #编译配置
+      WRT_DTS: ${{inputs.DTS}}
       #默认主题
       WRT_THEME: aurora
       #默认主机名
