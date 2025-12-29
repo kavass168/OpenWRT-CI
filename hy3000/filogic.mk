@@ -170,6 +170,7 @@ define Device/philips_hy3000
   DEVICE_DTS_DIR := ../dts
   DEVICE_DTC_FLAGS := --pad 4096
   DEVICE_DTS_LOADADDR := 0x43f00000
+  UBOOT_NAME := media
   DEVICE_PACKAGES := kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware kmod-usb3 \
 	automount f2fsck mkf2fs
   SUPPORTED_DEVICES += philips,hy3000
