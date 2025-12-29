@@ -762,6 +762,4 @@ define Package/trusted-firmware-a/install
 	$(INSTALL_DATA) $(PKG_BUILD_DIR)/build/$(PLAT)/release/bl31.bin $(STAGING_DIR_IMAGE)/$(BUILD_VARIANT)-bl31.bin
 endef
 
-Package/trusted-firmware-a-mt7981-emmc-ddr4/install = $(Package/trusted-firmware-a/install)
-
 $(eval $(call BuildPackage/Trusted-Firmware-A))
