@@ -44,8 +44,8 @@ mv -f $GITHUB_WORKSPACE/hy3000/arm-trusted-firmware-mediatek-#Makefile $GITHUB_W
 
 grep -q "trusted-firmware-a-mt7981-emmc-ddr4" "$GITHUB_WORKSPACE/wrt/package/boot/arm-trusted-firmware-mediatek/Makefile"
 if [ $? -ne 0 ]; then
-    echo "❌ uboot-mediatek/Makefile 更新不成功"
+    echo "❌ arm-trusted-firmware 更新不成功"
 else
-    echo "✅ uboot-mediatek/Makefile 更新成功"
+    echo "✅ arm-trusted-firmware 更新成功"
 fi
 
