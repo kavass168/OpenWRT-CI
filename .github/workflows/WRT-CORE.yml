@@ -157,6 +157,8 @@ jobs:
 
       # . 覆盖适配文件到官方源码
       - name: Apply HY3000 device files
+        env:
+           MY_DTS: ${{env.WRT_DTS}}
         run: |
           cd ./wrt/
           chmod +x $GITHUB_WORKSPACE/Scripts/copyfile-hy3000.sh
@@ -264,6 +266,7 @@ jobs:
             提交：${{env.WRT_HASH}}
 
             配置：${{env.WRT_CONFIG}}
+            DTS：${{env.WRT_DTS}}
             平台：${{env.WRT_TARGET}}
 
             登录地址：${{env.WRT_IP}}
