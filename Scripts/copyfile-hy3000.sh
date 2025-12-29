@@ -42,7 +42,7 @@ else
     echo "✅ patch补丁更新成功"
 fi
 
-mv -f $GITHUB_WORKSPACE/hy3000/arm-trusted-firmware-mediatek+Makefile $GITHUB_WORKSPACE/wrt/package/boot/arm-trusted-firmware-mediatek/Makefile
+mv -f $GITHUB_WORKSPACE/hy3000/arm-trusted-firmware-mediatek-#Makefile $GITHUB_WORKSPACE/wrt/package/boot/arm-trusted-firmware-mediatek/Makefile
 
 grep -q "trusted-firmware-a-mt7981-emmc-ddr4" "$GITHUB_WORKSPACE/wrt/package/boot/arm-trusted-firmware-mediatek/Makefile"
 if [ $? -ne 0 ]; then
