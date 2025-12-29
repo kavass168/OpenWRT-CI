@@ -17,15 +17,16 @@ cp $GITHUB_WORKSPACE/hy3000/platform.sh $GITHUB_WORKSPACE/wrt/target/linux/media
 cp $GITHUB_WORKSPACE/hy3000/11-mt76-caldata $GITHUB_WORKSPACE/wrt/target/linux/mediatek/filogic/base-files/etc/hotplug.d/firmware/ 
 cp $GITHUB_WORKSPACE/hy3000/11_fix_wifi_mac $GITHUB_WORKSPACE/wrt/target/linux/mediatek/filogic/base-files/etc/hotplug.d/ieee80211/
 cp $GITHUB_WORKSPACE/hy3000/mediatek_filogic $GITHUB_WORKSPACE/wrt/package/boot/uboot-tools/uboot-envtools/files/
-mv -f $GITHUB_WORKSPACE/hy3000/boot-uboot-makefile $GITHUB_WORKSPACE/wrt/package/boot/uboot-mediatek/Makefile
+
 # cp $GITHUB_WORKSPACE/hy3000/hy3000.conf $GITHUB_WORKSPACE/openwrt/.config
 
+mv -f $GITHUB_WORKSPACE/hy3000/boot-uboot-makefile $GITHUB_WORKSPACE/wrt/package/boot/uboot-mediatek/Makefile
 grep -q "philips_hy3000" "$GITHUB_WORKSPACE/wrt/package/boot/uboot-mediatek/Makefile"
 if [ $? -ne 0 ]; then
-    echo "❌ Makefile 更新不成功"
+    echo "❌ uboot-mediatek/Makefile 更新不成功"
     exit 1
 else
-    echo "✅ Makefile 更新成功"
+    echo "✅ uboot-mediatek/Makefile 更新成功"
 fi
 
 # cp $GITHUB_WORKSPACE/hy3000/437-add-cmcc_rax3000m+hy3000.patch $GITHUB_WORKSPACE/openwrt/package/boot/uboot-mediatek/patches/437-add-cmcc_rax3000m.patch
@@ -40,3 +41,15 @@ if [ $? -ne 0 ]; then
 else
     echo "✅ patch补丁更新成功"
 fi
+
+mv -f $GITHUB_WORKSPACE/hy3000/arm-trusted-firmware-mediatek+Makefile $GITHUB_WORKSPACE/wrt/package/boot/arm-trusted-firmware-mediatek/Makefile
+
+grep -q "trusted-firmware-a-mt7981-emmc-ddr4" "$GITHUB_WORKSPACE/wrt/package/boot/arm-trusted-firmware-mediatek/Makefile"
+if [ $? -ne 0 ]; then
+    echo "❌ uboot-mediatek/Makefile 更新不成功"
+    exit 1
+else
+    echo "✅ uboot-mediatek/Makefile 更新成功"
+fi
+
+package/boot/arm-trusted-firmware-mediatek/Makefile
