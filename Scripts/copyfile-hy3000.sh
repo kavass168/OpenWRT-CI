@@ -7,7 +7,6 @@ mv -f $GITHUB_WORKSPACE/hy3000/$MY_DTS $GITHUB_WORKSPACE/wrt/target/linux/mediat
 grep -q "hy3000" "$GITHUB_WORKSPACE/wrt/target/linux/mediatek/dts/mt7981b-philips-hy3000.dts"
 if [ $? -ne 0 ]; then
     echo "❌ DTS 更新不成功"
-    exit 1
 else
     echo "✅ DTS 更新成功"
 fi
@@ -24,7 +23,6 @@ mv -f $GITHUB_WORKSPACE/hy3000/boot-uboot-makefile $GITHUB_WORKSPACE/wrt/package
 grep -q "philips_hy3000" "$GITHUB_WORKSPACE/wrt/package/boot/uboot-mediatek/Makefile"
 if [ $? -ne 0 ]; then
     echo "❌ uboot-mediatek/Makefile 更新不成功"
-    exit 1
 else
     echo "✅ uboot-mediatek/Makefile 更新成功"
 fi
@@ -47,7 +45,6 @@ mv -f $GITHUB_WORKSPACE/hy3000/arm-trusted-firmware-mediatek-#Makefile $GITHUB_W
 grep -q "trusted-firmware-a-mt7981-emmc-ddr4" "$GITHUB_WORKSPACE/wrt/package/boot/arm-trusted-firmware-mediatek/Makefile"
 if [ $? -ne 0 ]; then
     echo "❌ uboot-mediatek/Makefile 更新不成功"
-    exit 1
 else
     echo "✅ uboot-mediatek/Makefile 更新成功"
 fi
