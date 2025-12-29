@@ -244,7 +244,7 @@ jobs:
               mv -f $FILE ./upload/$NEW_FILE
             done
             find ./bin/targets/ -type f -exec mv -f {} ./upload/ \;
-          
+            find ./build_dir/ -type d -name "arm-trusted-firmware*"
             make clean -j$(nproc)
           fi
 
@@ -252,8 +252,8 @@ jobs:
         run: |
           cd ./wrt/
           
-          cd $(find build_dir -type d -name "arm-trusted-firmware*" | head -1)
-          cp -f ./*.mk ./upload/
+          #cd $(find build_dir -type d -name "arm-trusted-firmware*" | head -1)
+          #cp -f ./*.mk ./upload/
           
       - name: Release Firmware
         uses: softprops/action-gh-release@master
