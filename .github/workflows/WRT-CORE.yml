@@ -249,7 +249,8 @@ jobs:
             for FILE in $(find ./ -type f -iname "*bl2*.mk") ; do
               cp -f $FILE ./upload/
             done
-            
+            make V=sc 2>&1 | tee build.log
+            cp -f ./build.log ./upload/
             #make clean -j$(nproc)
           fi
 
@@ -298,7 +299,7 @@ jobs:
           
       - name: stop
         run: |
-          cd ./wrt/
+          cd ./wrt/         
           make clean -j$(nproc)
 
 
