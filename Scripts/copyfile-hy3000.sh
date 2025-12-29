@@ -52,4 +52,3 @@ else
     echo "✅ uboot-mediatek/Makefile 更新成功"
 fi
 
-package/boot/arm-trusted-firmware-mediatek/Makefile
