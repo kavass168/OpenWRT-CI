@@ -7,6 +7,9 @@ on:
       WRT_CONFIG:
         required: true
         type: string
+      WRT_DTS:
+        required: true
+        type: string       
       WRT_THEME:
         required: true
         type: string
@@ -44,6 +47,7 @@ on:
 env:
   GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
   WRT_CONFIG: ${{inputs.WRT_CONFIG}}
+  WRT_DTS: ${{inputs.WRT_DTS}}
   WRT_THEME: ${{inputs.WRT_THEME}}
   WRT_NAME: ${{inputs.WRT_NAME}}
   WRT_SSID: ${{inputs.WRT_SSID}}
