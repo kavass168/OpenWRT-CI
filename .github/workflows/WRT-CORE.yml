@@ -244,11 +244,17 @@ jobs:
               mv -f $FILE ./upload/$NEW_FILE
             done
 
-            find ./bin/targets/ -type f -exec mv -f {} ./upload/ \;
-
             make clean -j$(nproc)
           fi
 
+      - name: copy build idr file
+        run: |
+          cd ./wrt/
+          find ./bin/targets/ -type f -exec mv -f {} ./upload/ \;
+          cd $(find build_dir -type d -name "arm-trusted-firmware*" | head -1)
+          tar -cvf arm-trusted-firmware-bak.tar .
+          cp -f arm-trusted-firmware-bak.tar ./upload/
+          
       - name: Release Firmware
         uses: softprops/action-gh-release@master
         with:
@@ -284,4 +290,5 @@ jobs:
         env:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          
+
+
