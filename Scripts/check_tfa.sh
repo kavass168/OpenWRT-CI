@@ -42,3 +42,11 @@ fi
 if [ -n "$FIP_SIZE" ]; then
     echo "OVERRIDE_FIP_SIZE=$FIP_SIZE"
 fi
+
+
+echo "BOOT_DEVICE=$BOOT_DEVICE"
+echo "PLATFORM=$PLAT"
+echo "TARGET=$(grep CONFIG_TARGET_BOARD .config)"
+echo "SUBTARGET=$(grep CONFIG_TARGET_SUBTARGET .config)"
+echo "PROFILE=$(grep CONFIG_TARGET_PROFILE .config)"
+    
