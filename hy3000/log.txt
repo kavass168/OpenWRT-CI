@@ -7,3 +7,144 @@ define Device/your-device
     # ... 其他配置 ...
     DEVICE_PACKAGES += arm-trusted-firmware-tools
 endef
+
+philips_hy3000
+
+
+cat /mnt/build_wrt/build_dir/target-aarch64_cortex-a53_musl/linux-mediatek_filogic/tmp/immortalwrt-mediatek-filogic-philips_hy3000-gpt.bin.tmp >> /mnt/build_wrt/build_dir/target-aarch64_cortex-a53_musl/linux-mediatek_filogic/tmp/immortalwrt-mediatek-filogic-philips_hy3000-gpt.bin
+rm /mnt/build_wrt/build_dir/target-aarch64_cortex-a53_musl/linux-mediatek_filogic/tmp/immortalwrt-mediatek-filogic-philips_hy3000-gpt.bin.tmp
+cp /mnt/build_wrt/build_dir/target-aarch64_cortex-a53_musl/linux-mediatek_filogic/tmp/immortalwrt-mediatek-filogic-philips_hy3000-gpt.bin /mnt/build_wrt/bin/targets/mediatek/filogic/immortalwrt-mediatek-filogic-philips_hy3000-gpt.bin
+DEVICE_ID="philips_hy3000" SOURCE_DATE_EPOCH=1766385555 FILE_NAME="immortalwrt-mediatek-filogic-philips_hy3000-gpt.bin" FILE_DIR="/mnt/build_wrt/build_dir/target-aarch64_cortex-a53_musl/linux-mediatek_filogic/tmp" FILE_TYPE="gpt.bin" DEVICE_IMG_PREFIX="immortalwrt-mediatek-filogic-philips_hy3000" DEVICE_VENDOR="Philips" DEVICE_MODEL="HY3000" DEVICE_VARIANT="" DEVICE_ALT0_VENDOR="" DEVICE_ALT0_MODEL="" DEVICE_ALT0_VARIANT="" DEVICE_ALT1_VENDOR="" DEVICE_ALT1_MODEL="" DEVICE_ALT1_VARIANT="" DEVICE_ALT2_VENDOR="" DEVICE_ALT2_MODEL="" DEVICE_ALT2_VARIANT="" DEVICE_ALT3_VENDOR="" DEVICE_ALT3_MODEL="" DEVICE_ALT3_VARIANT="" DEVICE_ALT4_VENDOR="" DEVICE_ALT4_MODEL="" DEVICE_ALT4_VARIANT="" DEVICE_ALT5_VENDOR="" DEVICE_ALT5_MODEL="" DEVICE_ALT5_VARIANT="" DEVICE_TITLE="Philips HY3000" DEVICE_PACKAGES="kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware kmod-usb3 automount f2fsck mkf2fs" TARGET="mediatek" SUBTARGET="filogic" VERSION_NUMBER="25.12-SNAPSHOT" VERSION_CODE="r0-45dca08" SUPPORTED_DEVICES="philips,hy3000 p
+cat /mnt/build_wrt/staging_dir/target-aarch64_cortex-a53_musl/image/mt7981-emmc-ddr4-bl2.img >> /mnt/build_wrt/build_dir/target-aarch64_cortex-a53_musl/linux-mediatek_filogic/tmp/immortalwrt-mediatek-filogic-philips_hy3000-preloader.bin
+cat: /mnt/build_wrt/staging_dir/target-aarch64_cortex-a53_musl/image/mt7981-emmc-ddr4-bl2.img: No such file or directory
+make[5]: *** [Makefile:48: /mnt/build_wrt/build_dir/target-aarch64_cortex-a53_musl/linux-mediatek_filogic/tmp/immortalwrt-mediatek-filogic-philips_hy3000-preloader.bin] Error 1
+make[5]: Leaving directory '/mnt/build_wrt/target/linux/mediatek/image'
+
+ssh 解除限制时间
+touch /tmp/keepalive 
+
+find ./build_dir/ -type f -iname "*emmc*"
+
+find ./build_dir/ -type f -iname "*defconfig"
+./build_dir/host/u-boot-2025.10/configs/socfpga_dbm_soc1_defconfig
+./build_dir/host/u-boot-2025.10/configs/variscite_dart6ul_defconfig
+./build_dir/host/u-boot-2025.10/configs/orangepi_pc2_defconfig
+./build_dir/host/u-boot-2025.10/configs/udoo_defconfig
+./build_dir/host/u-boot-2025.10/configs/corstone1000_defconfig
+./build_dir/host/u-boot-2025.10/configs/M5235EVB_Flash32_defconfig
+./build_dir/host/u-boot-2025.10/configs/P2020RDB-PC_36BIT_defconfig
+./build_dir/host/u-boot-2025.10/configs/octeontx_81xx_defconfig
+./build_dir/host/u-boot-2025.10/configs/at91sam9g10ek_nandflash_defconfig
+./build_dir/host/u-boot-2025.10/configs/nitrogen6q2g_defconfig
+./build_dir/host/u-boot-2025.10/configs/vexpress_ca9x4_defconfig
+./build_dir/host/u-boot-2025.10/configs/imx8mn_venice_defconfig
+./build_dir/host/u-boot-2025.10/configs/xilinx_zynqmp_mini_nand_defconfig
+./build_dir/host/u-boot-2025.10/configs/imx8mm_evk_fspi_defconfig
+./build_dir/host/u-boot-2025.10/configs/mx6ul_14x14_evk_defconfig
+
+find ./build_dir/ -type f -iname "mt7981_philips_hy3000_defconfig"
+find ./build_dir/ -type d -name "philips_hy3000"
+
+find ./ -type d -name "*arm-trusted-firmware*" 
+./build_dir/target-aarch64_cortex-a53_musl/u-boot-mt7981_cmcc_rax3000m-nand/u-boot-2025.10/configs/mt7981_cmcc_rax3000m-emmc_defconfig
+
+find ./build_dir/ -type f -iname "cmcc_rax3000m-emmc_env"
+./build_dir/target-aarch64_cortex-a53_musl/u-boot-mt7981_cmcc_rax3000m-emmc/u-boot-2025.10/defenvs/cmcc_rax3000m-emmc_env
+
+
+find ./build_dir/ -type f -iname "mt7981-cmcc-rax3000m-emmc.dts"
+./build_dir/target-aarch64_cortex-a53_musl/u-boot-mt7981_cmcc_rax3000m-emmc/u-boot-2025.10/arch/arm/dts/mt7981-cmcc-rax3000m-emmc.dts
+
+find ./ -type f -iname 437-add-cmcc_rax3000m.patch
+find ./  uboot-m*
+
+-name
+
+
+
+cp ./hy3000/473-add-philips-hy3000.patch ./wrt/package/boot/uboot-mediatek/patches/
+
+./build_dir/target-aarch64_cortex-a53_musl/linux-mediatek_filogic/linux-6.12.62/include/config/NVMEM_LAYOUT_U_BOOT_ENV
+
+
+mt7981-cmcc-rax3000m.dtsi
+
+find ./build_dir/ "arch*arm*dts"
+/work/open-immortalwrt-mt7981/open-immortalwrt-mt7981/openwrt/build_dir/host/u-boot-2025.10/arch/arm/dts$
+
+/work/open-immortalwrt-mt7981/open-immortalwrt-mt7981/openwrt/build_dir/host/u-boot-2025.10
+
+git apply --stat 437-add-cmcc_rax3000m.patch
+openwrt/package/boot/uboot-mediatek/patches$
+
+make package/boot/uboot-mediatek V=s
+make openwrt/package/boot/arm-trusted-firmware-mediatek V=s
+
+
+To connect to this session copy and paste the following into a terminal or browser:
+ssh L55nwnaKQ7nMRqsbFxYjfSWwg@nyc1.tmate.io
+URL: https://tmate.io/t/L55nwnaKQ7nMRqsbFxYjfSWwg
+
+补丁排序
+find -name *patch| awk -F/ '{print $3}' | sort -n
+
+查看最大的patch编号
+quilt series
+或者
+quilt top
+
+应用已经存在的补丁
+进入之后执行quilt push -a
+
+make package/kernel/mtxx/update V=s（增量更新） 或者 make package/kernel/mtxx/compile V=s （重新编译）进行编译
+
+编译完成后去build_dir查看编译的原始文件，这时候看到patch打进来了
+
+
+
+runner@runnervmh13bl:~/work/OpenWRT-CI/OpenWRT-CI$ $GITHUB_WORKSPACE/Scripts/check_tfa1.sh
+=== TF-A 编译标志检查 ===
+BOOT_DEVICE: 未设置
+DDR_TYPE: 未设置
+USE_UBI: 未设置
+RAM_BOOT_UART_DL: 未设置
+PLAT: 未设置
+FIP_OFFSET: 未设置
+FIP_SIZE: 未设置
+
+=== 模拟的 TFA_MAKE_FLAGS ===
+BOOT_DEVICE=
+USE_MKIMAGE=1
+编译目标: all
+BOOT_DEVICE=
+PLATFORM=
+grep: .config: No such file or directory
+TARGET=
+grep: .config: No such file or directory
+SUBTARGET=
+grep: .config: No such file or directory
+PROFILE=
+
+OpenWRT-CI/wrt/build_dir/target-aarch64_cortex-a53_musl/
+
+atek-mt7981-emmc-ddr4/arm-trusted-firmware-mediatek-2025.07.11~78a0dfd9/configs$ ls
+mt7622_rfb_snfi_nand_defconfig  mt7986_rfb_spim_nand_defconfig        mt7987_spim_nand_ddr4_3200_defconfig
+mt7629_rfb_snfi_nand_defconfig  mt7987_spim_nand_ddr3_defconfig       mt7988_rfb_spim_nand_defconfig
+mt7981_rfb_spim_nand_defconfig  mt7987_spim_nand_ddr4_2800_defconfig
+
+   echo "1. 从 .config 文件读取:"
+    grep -E "(BOOT_DEVICE|DDR_TYPE|RAM_BOOT|USE_UBI|PLAT|NAND)" .config | head -20
+    echo ""
+fi
+1. 从 .config 文件读取:
+CONFIG_NAND_SUPPORT=y
+
+方法3：查看实际编译命令
+bash
+# 查看完整的编译过程
+make V=sc 2>&1 | tee build.log
+
+# 提取 TF-A 相关的编译命令
+grep -A2 -B2 "arm-trusted-firmware" build.log | grep -E "(make|MAKE|TFA)"
+
+
