@@ -1,0 +1,9 @@
+方案A：强制作为依赖编译
+在设备配置中明确添加依赖：
+
+makefile
+# 在你的设备定义文件 target/linux/mediatek/mt79xx/image/Makefile 中添加：
+define Device/your-device
+    # ... 其他配置 ...
+    DEVICE_PACKAGES += arm-trusted-firmware-tools
+endef
