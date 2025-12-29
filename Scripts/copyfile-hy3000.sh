@@ -3,7 +3,7 @@
 # 3. 覆盖适配文件到官方源码
 cp $GITHUB_WORKSPACE/hy3000/filogic.mk $GITHUB_WORKSPACE/wrt/target/linux/mediatek/image/
 
-cp $GITHUB_WORKSPACE/hy3000/$MY_DTS $GITHUB_WORKSPACE/wrt/target/linux/mediatek/dts/mt7981b-philips-hy3000.dts
+mv -f $GITHUB_WORKSPACE/hy3000/$MY_DTS $GITHUB_WORKSPACE/wrt/target/linux/mediatek/dts/mt7981b-philips-hy3000.dts
 grep -q "philips_hy3000" "$GITHUB_WORKSPACE/wrt/target/linux/mediatek/dts/mt7981b-philips-hy3000.dts"
 if [ $? -ne 0 ]; then
     echo "❌ DTS 更新不成功"
