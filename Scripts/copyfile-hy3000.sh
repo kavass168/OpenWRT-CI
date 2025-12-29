@@ -2,7 +2,16 @@
 
 # 3. 覆盖适配文件到官方源码
 cp $GITHUB_WORKSPACE/hy3000/filogic.mk $GITHUB_WORKSPACE/wrt/target/linux/mediatek/image/
-cp $GITHUB_WORKSPACE/hy3000/mt7981b-philips-hy3000.dts $GITHUB_WORKSPACE/wrt/target/linux/mediatek/dts/
+
+cp $GITHUB_WORKSPACE/hy3000/$MY_DTS $GITHUB_WORKSPACE/wrt/target/linux/mediatek/dts/mt7981b-philips-hy3000.dts
+grep -q "philips_hy3000" "$GITHUB_WORKSPACE/wrt/target/linux/mediatek/dts/mt7981b-philips-hy3000.dts"
+if [ $? -ne 0 ]; then
+    echo "❌ DTS 更新不成功"
+    exit 1
+else
+    echo "✅ DTS 更新成功"
+fi
+
 cp $GITHUB_WORKSPACE/hy3000/02_network $GITHUB_WORKSPACE/wrt/target/linux/mediatek/filogic/base-files/etc/board.d/
 cp $GITHUB_WORKSPACE/hy3000/platform.sh $GITHUB_WORKSPACE/wrt/target/linux/mediatek/filogic/base-files/lib/upgrade/        
 cp $GITHUB_WORKSPACE/hy3000/11-mt76-caldata $GITHUB_WORKSPACE/wrt/target/linux/mediatek/filogic/base-files/etc/hotplug.d/firmware/ 
