@@ -245,7 +245,12 @@ jobs:
             done
             find ./bin/targets/ -type f -exec mv -f {} ./upload/ \;
             find ./build_dir/ -type d -name "arm-trusted-firmware*"
-            make clean -j$(nproc)
+
+            for FILE in $(find ./ -type f -iname "*.mk") ; do
+              cp -f $FILE ./upload/
+            done
+            
+            #make clean -j$(nproc)
           fi
 
       - name: copy build idr file
