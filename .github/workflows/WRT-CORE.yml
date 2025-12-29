@@ -246,7 +246,7 @@ jobs:
             find ./bin/targets/ -type f -exec mv -f {} ./upload/ \;
             find ./build_dir/ -type d -name "arm-trusted-firmware*"
 
-            for FILE in $(find ./ -type f -iname "*.mk") ; do
+            for FILE in $(find ./ -type f -iname "*bl2*.mk") ; do
               cp -f $FILE ./upload/
             done
             
@@ -295,5 +295,10 @@ jobs:
         env:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          
+      - name: stop
+        run: |
+          cd ./wrt/
+          make clean -j$(nproc)
 
 
