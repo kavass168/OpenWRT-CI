@@ -172,8 +172,8 @@ define Device/philips_hy3000
   DEVICE_DTS_LOADADDR := 0x43f00000
   UBOOT_NAME := media
   DEVICE_PACKAGES := kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware kmod-usb3 \
-	automount f2fsck mkf2fs arm-trusted-firmware-tools uboot-mediatek
-  # SUPPORTED_DEVICES += philips,hy3000
+	automount f2fsck mkf2fs
+  SUPPORTED_DEVICES += philips,hy3000
   KERNEL_LOADADDR := 0x44000000
   KERNEL := kernel-bin | gzip
   KERNEL_INITRAMFS := kernel-bin | lzma | \
