@@ -26,7 +26,7 @@ include $(INCLUDE_DIR)/package.mk
 define Trusted-Firmware-A/Default
   BUILD_TARGET:=mediatek
   TFA_IMAGE:=bl2.img bl31.bin
-  HIDDEN:=y
+  HIDDEN:=
   BOOT_DEVICE:=
   DDR3_FLYBY:=
   DDR3_FREQ_1866:=
