@@ -741,7 +741,27 @@ TFA_MAKE_FLAGS += \
 	$(if $(SPIM_CTRL),SPIM_CTRL=$(SPIM_CTRL)) \
 	$(if $(RAM_BOOT_UART_DL),bl2,all)
 
+
 $(info TFA_MAKE_FLAGS: $(TFA_MAKE_FLAGS))
+
+# TFA_MAKE_FLAGS
+$(info === TF-A  ===)
+$(info BOOT_DEVICE=$(BOOT_DEVICE))
+$(info DDR_TYPE=$(DDR_TYPE))
+$(info BOARD_QFN=$(BOARD_QFN)
+$(info NAND_TYPE=$(NAND_TYPE)
+$(info DDR3_FLYBY=$(DDR3_FLYBY)
+$(info DDR4_4BG_MODE=$(DDR4_4BG_MODE)
+$(info DRAM_USE_COMB=$(DRAM_USE_COMB)
+$(info RAM_BOOT_UART_DL=$(RAM_BOOT_UART_DL)
+$(info USE_UBI=$(USE_UBI)
+$(info FIP_OFFSET=$(FIP_OFFSET)
+$(info FIP_SIZE=$(FIP_SIZE)
+$(info SPIM_CTRL=$(SPIM_CTRL)
+$(info PLAT=$(PLAT))
+$(info TFA_MAKE_FLAGS:)
+$(foreach flag,$(TFA_MAKE_FLAGS),$(info   $(flag)))
+$(info ========================)
 
 define Package/trusted-firmware-a-ram/install
 	$(INSTALL_DIR) $(STAGING_DIR_IMAGE)
