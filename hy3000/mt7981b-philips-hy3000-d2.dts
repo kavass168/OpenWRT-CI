@@ -24,6 +24,7 @@
 
 	chosen: chosen {
 		bootargs-override = "root=/dev/fit0 rootwait";
+        rootdisk = <&emmc_rootdisk>;
 		stdout-path = "serial0:115200n8";
 	};
 
