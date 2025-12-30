@@ -741,6 +741,8 @@ TFA_MAKE_FLAGS += \
 	$(if $(SPIM_CTRL),SPIM_CTRL=$(SPIM_CTRL)) \
 	$(if $(RAM_BOOT_UART_DL),bl2,all)
 
+$(info TFA_MAKE_FLAGS: $(TFA_MAKE_FLAGS))
+
 define Package/trusted-firmware-a-ram/install
 	$(INSTALL_DIR) $(STAGING_DIR_IMAGE)
 	$(INSTALL_DATA) $(PKG_BUILD_DIR)/build/$(PLAT)/release/bl2.bin $(BIN_DIR)/$(BUILD_VARIANT)-bl2.bin
