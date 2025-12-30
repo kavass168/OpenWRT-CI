@@ -164,7 +164,7 @@ endef
 TARGET_DEVICES += abt_asr3000
 
 define Device/philips_hy3000
-  DEVICE_VENDOR := Philips
+  DEVICE_VENDOR := PHILIPS
   DEVICE_MODEL := HY3000
   DEVICE_DTS := mt7981b-philips-hy3000
   DEVICE_DTS_DIR := ../dts
