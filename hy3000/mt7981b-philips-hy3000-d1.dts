@@ -11,7 +11,7 @@
 #include "mt7981b.dtsi"
 
 / {
-	model = "Philips-hy3000";
+	model = "PHILIPS HY3000";
 	compatible = "philips,hy3000", "mediatek,mt7981";
 
 	aliases {
