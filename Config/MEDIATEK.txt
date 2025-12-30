@@ -5,3 +5,4 @@ CONFIG_TARGET_mediatek_filogic=y
 #CONFIG_TARGET_mediatek_filogic_DEVICE_philips_hy3000=y
 CONFIG_TARGET_mediatek_filogic_DEVICE_cmcc_rax3000m=y
 
+
