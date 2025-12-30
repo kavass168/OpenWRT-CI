@@ -249,15 +249,15 @@ jobs:
             for FILE in $(find ./ -type f -iname "*bl2*.mk") ; do
               cp -f $FILE ./upload/
             done
-            make V=sc 2>&1 | tee build.log
-            cp -f ./build.log ./upload/
+
             #make clean -j$(nproc)
           fi
 
-      - name: copy build idr file
+      - name: Build log unload
         run: |
           cd ./wrt/
-          
+          make V=sc 2>&1 | tee build.log
+          cp -f ./build.log ./upload/
           #cd $(find build_dir -type d -name "arm-trusted-firmware*" | head -1)
           #cp -f ./*.mk ./upload/
           
@@ -295,9 +295,9 @@ jobs:
         if: (github.event.inputs.ssh == 'true' && github.event.inputs.ssh  != 'false') || contains(github.event.action, 'ssh')
         env:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          
-      - name: stop
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}        
+
+      - name: Make ok -clean
         run: |
           cd ./wrt/         
           make clean -j$(nproc)
