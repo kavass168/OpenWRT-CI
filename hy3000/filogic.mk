@@ -186,9 +186,9 @@ define Device/philips_hy3000
 	fit gzip $$(KDIR)/image-$$(firstword $$(DEVICE_DTS)).dtb external-static-with-rootfs | \
 	pad-rootfs | append-metadata 
   ARTIFACTS := gpt.bin preloader.bin bl31-uboot.fip
-  ARTIFACT/gpt.bin := mt798x-gpt emmc
-  ARTIFACT/preloader.bin := mt7981-bl2 emmc-ddr4
-  ARTIFACT/bl31-uboot.fip := mt7981-bl31-uboot philips_hy3000
+  #ARTIFACT/gpt.bin := mt798x-gpt emmc
+  #ARTIFACT/preloader.bin := mt7981-bl2 emmc-ddr4
+  #ARTIFACT/bl31-uboot.fip := mt7981-bl31-uboot philips_hy3000
   #ARTIFACTS := gpt.bin
   #ARTIFACT/gpt.bin := mt798x-gpt emmc
 endef
