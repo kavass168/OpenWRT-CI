@@ -1186,7 +1186,6 @@ define U-Boot/mt7988_rfb-sd
 endef
 
 UBOOT_TARGETS := \
-    mt7981_philips_hy3000 \
 	mt7620_mt7530_rfb \
 	mt7620_rfb \
 	mt7621_nand_rfb \
@@ -1209,6 +1208,7 @@ UBOOT_TARGETS := \
 	mt7981_abt_asr3000 \
 	mt7981_cetron_ct3003 \
 	mt7981_cmcc_a10 \
+    mt7981_philips_hy3000 \
 	mt7981_cmcc_rax3000m-emmc \
 	mt7981_cmcc_rax3000m-nand \
 	mt7981_cmcc_rax3000me-emmc-ddr3 \
