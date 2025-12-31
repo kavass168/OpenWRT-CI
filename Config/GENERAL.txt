@@ -6837,6 +6837,7 @@ CONFIG_PACKAGE_umdns=y
 # CONFIG_PACKAGE_fconfig is not set
 CONFIG_PACKAGE_fit-check-sign=y
 CONFIG_PACKAGE_uboot-envtools=y
+CONFIG_PACKAGE_uboot-mediatek=y
 # end of Boot Loaders
 
 #
@@ -7767,7 +7768,7 @@ CONFIG_PACKAGE_ucode-mod-lua=y
 
 #
 # Xorg
-#
+
 
 #
 # Font-Utils
