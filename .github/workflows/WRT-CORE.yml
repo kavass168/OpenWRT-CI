@@ -200,13 +200,13 @@ jobs:
         run: |
           cd ./wrt/
           # make download -j$(nproc)
-          make download V=dd
+          make download
 
       - name: Compile Firmware
         if: env.WRT_TEST != 'true'
         run: |
           cd ./wrt/
-          # make -j$(nproc) || make -j1 V=s
+          make -j$(nproc) || make -j1 V=s
 
       - name: Machine Information
         run: |
@@ -249,7 +249,8 @@ jobs:
               cp -f $FILE ./upload/
             done
 
-            #make clean -j$(nproc)
+            # make clean -j$(nproc)
+            # 已经改到最后清除
           fi
 
       - name: Build log unload
