@@ -22,12 +22,6 @@ ubootenv_add_nor_default() {
 }
 
 case "$board" in
-philips,hy3000)
-		local envdev=$(find_mmc_part "ubootenv" "mmcblk0")
-		ubootenv_add_uci_config "$envdev" "0x0" "0x40000" "0x40000" "1"
-		ubootenv_add_uci_config "$envdev" "0x40000" "0x40000" "0x40000" "1"
-	;;
-
 abt,asr3000|\
 acer,predator-w6x-ubootmod|\
 asus,zenwifi-bt8-ubootmod|\
@@ -92,6 +86,7 @@ bananapi,bpi-r4|\
 bananapi,bpi-r4-lite|\
 bananapi,bpi-r4-poe|\
 cmcc,rax3000m|\
+philips,hy3000|\
 cmcc,rax3000me|\
 jdcloud,re-cp-03|\
 konka,komi-a31)
