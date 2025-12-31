@@ -742,6 +742,7 @@ TFA_MAKE_FLAGS += \
 	$(if $(SPIM_CTRL),SPIM_CTRL=$(SPIM_CTRL)) \
 	$(if $(RAM_BOOT_UART_DL),bl2,all)
 
+#  手动添加代码 测试menuconfig是否能显示
 
 define Trusted-Firmware-A/mt7981-bl31-uboot
   NAME:=BL31 and FIP for MT7981
@@ -759,6 +760,17 @@ define Trusted-Firmware-A/mt7981-bl31-uboot
   UBOOT_BIN:=$(STAGING_DIR_IMAGE)/$(BUILD_VARIANT)-$(UBOOT_IMAGE)
 endef
 
+# define Trusted-Firmware-A/mt7981-bl2
+#   NAME:=BL2 for MT7981
+#   PLAT:=mt7981
+#   TFA_IMAGE:=bl2.img
+#   TFA_TARGETS:=emmc-ddr4 spim-nand-ddr3
+# endef
+
+
+#  手动添加代码 测试menuconfig是否能显示
+
+# 显示TFA_MAKE_FLAGS变量
 $(info TFA_MAKE_FLAGS: $(TFA_MAKE_FLAGS))
 
 
