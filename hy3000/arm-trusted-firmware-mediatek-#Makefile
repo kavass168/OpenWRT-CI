@@ -745,6 +745,31 @@ TFA_MAKE_FLAGS += \
 
 $(info TFA_MAKE_FLAGS: $(TFA_MAKE_FLAGS))
 
+# 确保有以下两个包定义（或类似的变体定义）
+define Package/trusted-firmware-a-mt7981-bl2
+  NAME:=BL2 for MT7981
+  PLAT:=mt7981
+  BOOT_DEVICE:=emmc
+  BUILD_SUBTARGET:=filogic
+  # PLAT:=mt7981
+  DDR_TYPE:=ddr4
+  HIDDEN:=
+  TFA_IMAGE:=bl2.img
+  TFA_TARGETS:=emmc-ddr4
+endef
+
+define Package/trusted-firmware-a-mt7981-bl31-uboot
+  NAME:=BL31 and FIP for MT7981
+  PLAT:=mt7981
+  BOOT_DEVICE:=emmc
+  BUILD_SUBTARGET:=filogic
+  # PLAT:=mt7981
+  DDR_TYPE:=ddr4
+  HIDDEN:=
+  TFA_IMAGE:=bl31.bin fip.bin
+  TFA_TARGETS:=philips_hy3000
+endef
+
 
 
 define Package/trusted-firmware-a-ram/install
