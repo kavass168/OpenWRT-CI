@@ -743,6 +743,22 @@ TFA_MAKE_FLAGS += \
 	$(if $(RAM_BOOT_UART_DL),bl2,all)
 
 
+define Trusted-Firmware-A/mt7981-bl31-uboot
+  NAME:=BL31 and FIP for MT7981
+  PLAT:=mt7981
+  TFA_IMAGE:=bl31.bin fip.bin
+  # 关键：在这里列出所有使用此变体的设备，把你的 philips_hy3000 加进去
+  TFA_TARGETS:=philips_hy3000
+  # 通常需要指定 DDR 类型和存储类型，这必须与你的硬件一致！
+  # 假设 HY3000 使用 eMMC 和 DDR4：
+  TFA_MAKE_FLAGS += DDR_TYPE=ddr4 BOOT_DEVICE:=emmc
+  # BROM_BOOT_DEVICE=emmc
+  # 这是最关键的一行，告诉构建系统去哪里找编译好的 U-Boot 二进制文件
+  # 格式通常是：$(STAGING_DIR_IMAGE)/u-boot-$(设备名).bin
+  # 这里的 “设备名” 必须与 uboot-mediatek/Makefile 中定义的生成文件名匹配
+  UBOOT_BIN:=$(STAGING_DIR_IMAGE)/$(BUILD_VARIANT)-$(UBOOT_IMAGE)
+endef
+
 $(info TFA_MAKE_FLAGS: $(TFA_MAKE_FLAGS))
 
 
