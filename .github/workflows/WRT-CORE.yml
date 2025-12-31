@@ -255,8 +255,9 @@ jobs:
       - name: Build log unload
         run: |
           cd ./wrt/
-          make V=sc 2>&1 | tee build.log
-          cp -f ./build.log ./upload/
+          # make V=sc 2>&1 | tee build.log
+          # cp -f ./build.log ./upload/
+          
           #cd $(find build_dir -type d -name "arm-trusted-firmware*" | head -1)
           #cp -f ./*.mk ./upload/
           
