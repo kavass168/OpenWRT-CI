@@ -22,6 +22,12 @@ ubootenv_add_nor_default() {
 }
 
 case "$board" in
+philips,hy3000)
+		local envdev=$(find_mmc_part "ubootenv" "mmcblk0")
+		ubootenv_add_uci_config "$envdev" "0x0" "0x40000" "0x40000" "1"
+		ubootenv_add_uci_config "$envdev" "0x40000" "0x40000" "0x40000" "1"
+	;;
+
 abt,asr3000|\
 acer,predator-w6x-ubootmod|\
 asus,zenwifi-bt8-ubootmod|\
@@ -60,7 +66,6 @@ acer,predator-w6|\
 acer,predator-w6d|\
 acer,vero-w6m|\
 glinet,gl-mt2500|\
-philips,hy3000|\
 glinet,gl-mt6000|\
 glinet,gl-x3000|\
 glinet,gl-xe3000|\
