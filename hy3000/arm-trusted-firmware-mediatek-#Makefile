@@ -165,6 +165,7 @@ define Trusted-Firmware-A/mt7981-emmc-ddr4
   BUILD_SUBTARGET:=filogic
   PLAT:=mt7981
   DDR_TYPE:=ddr4
+  HIDDEN:=
 endef
 
 define Trusted-Firmware-A/mt7981-sdmmc-ddr4
