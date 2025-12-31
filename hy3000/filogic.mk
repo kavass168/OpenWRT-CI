@@ -171,7 +171,7 @@ define Device/philips_hy3000
   DEVICE_DTC_FLAGS := --pad 4096
   DEVICE_DTS_LOADADDR := 0x43f00000
   DEVICE_PACKAGES := kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware kmod-usb3 \
-	automount f2fsck mkf2fs
+	automount f2fsck mkf2fs u-boot-mt7981_philips_hy3000 
   # SUPPORTED_DEVICES += philips,hy3000
   KERNEL_LOADADDR := 0x44000000
   KERNEL := kernel-bin | gzip
@@ -186,11 +186,11 @@ define Device/philips_hy3000
 	fit gzip $$(KDIR)/image-$$(firstword $$(DEVICE_DTS)).dtb external-static-with-rootfs | \
 	pad-rootfs | append-metadata 
   ARTIFACTS := gpt.bin preloader.bin bl31-uboot.fip
-  #ARTIFACT/gpt.bin := mt798x-gpt emmc
-  #ARTIFACT/preloader.bin := mt7981-bl2 emmc-ddr4
-  #ARTIFACT/bl31-uboot.fip := mt7981-bl31-uboot philips_hy3000
-  #ARTIFACTS := gpt.bin
-  #ARTIFACT/gpt.bin := mt798x-gpt emmc
+  ARTIFACT/gpt.bin := mt798x-gpt emmc
+  ARTIFACT/preloader.bin := mt7981-bl2 emmc-ddr4
+  ARTIFACT/bl31-uboot.fip := mt7981-bl31-uboot philips_hy3000
+  # ARTIFACTS := gpt.bin
+  # ARTIFACT/gpt.bin := mt798x-gpt emmc
 endef
 TARGET_DEVICES += philips_hy3000
 
