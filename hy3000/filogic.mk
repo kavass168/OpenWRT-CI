@@ -171,7 +171,7 @@ define Device/philips_hy3000
   DEVICE_DTC_FLAGS := --pad 4096
   DEVICE_DTS_LOADADDR := 0x43f00000
   DEVICE_PACKAGES := kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware kmod-usb3 \
-	automount f2fsck mkf2fs u-boot-mt7981_philips_hy3000 
+	automount f2fsck mkf2fs u-boot-mt7981_philips_hy3000 trusted-firmware-a-mt7981-emmc-ddr4
   # SUPPORTED_DEVICES += philips,hy3000
   KERNEL_LOADADDR := 0x44000000
   KERNEL := kernel-bin | gzip
