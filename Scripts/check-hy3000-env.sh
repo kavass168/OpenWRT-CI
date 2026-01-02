@@ -35,7 +35,7 @@ fi
 grep -q "philips_hy3000=y" "$ROOT/.config"
 if [ $? -ne 0 ]; then
     echo "❌ .config 未启用 hy3000"
-    # exit 1
+    exit 1
 else
     echo "✅ .config 已启用 hy3000"
 fi
