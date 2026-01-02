@@ -171,22 +171,24 @@ define Device/philips_hy3000
   DEVICE_DTC_FLAGS := --pad 4096
   DEVICE_DTS_LOADADDR := 0x43f00000
   DEVICE_PACKAGES := kmod-mt7915e kmod-mt7981-firmware mt7981-wo-firmware kmod-usb3 \
-	automount f2fsck mkf2fs
+	automount f2fsck mkf2fs u-boot-mt7981_philips_hy3000 trusted-firmware-a-mt7981-emmc-ddr4
   # SUPPORTED_DEVICES += philips,hy3000
   KERNEL_LOADADDR := 0x44000000
   KERNEL := kernel-bin | gzip
   KERNEL_INITRAMFS := kernel-bin | lzma | \
         fit lzma $$(KDIR)/image-$$(firstword $$(DEVICE_DTS)).dtb with-initrd | pad-to 64k
   KERNEL_INITRAMFS_SUFFIX := -recovery.itb
+  # KERNEL_IN_UBI := 1
+  # UBOOTENV_IN_UBI := 1
   IMAGES := sysupgrade.itb
   IMAGE_SIZE := $$(shell expr 64 + $$(CONFIG_TARGET_ROOTFS_PARTSIZE))m
   IMAGE/sysupgrade.itb := append-kernel | \
 	fit gzip $$(KDIR)/image-$$(firstword $$(DEVICE_DTS)).dtb external-static-with-rootfs | \
 	pad-rootfs | append-metadata 
-  ARTIFACTS := gpt.bin preloader.bin
+  ARTIFACTS := gpt.bin preloader.bin bl31-uboot.fip
   ARTIFACT/gpt.bin := mt798x-gpt emmc
   ARTIFACT/preloader.bin := mt7981-bl2 emmc-ddr4
-  # ARTIFACT/bl31-uboot.fip := mt7981-bl31-uboot philips_hy3000
+  ARTIFACT/bl31-uboot.fip := mt7981-bl31-uboot philips_hy3000
   # ARTIFACTS := gpt.bin
   # ARTIFACT/gpt.bin := mt798x-gpt emmc
 endef
